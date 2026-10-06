@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- App Store screenshot frame. Rendered by storage-cleaner/scripts/frame-screenshots.sh with headless Chrome:
+     template.html?shot=<png>&title=<headline>&sub=<line>&w=<px>&h=<px> -->
+<style>
+  html, body { margin: 0; }
+  body {
+    width: var(--w); height: var(--h); overflow: hidden;
+    background: #1f5a46; color: #ffffff;
+    font-family: -apple-system, system-ui, sans-serif;
+    display: flex; flex-direction: column; align-items: center;
+  }
+  .caption { width: 84%; margin-top: calc(var(--h) * 0.055); text-align: left; }
+  h1 {
+    font-family: ui-serif, "New York", Georgia, serif; font-weight: 600; font-style: normal;
+    font-size: calc(var(--w) * 0.078); line-height: 1.1; margin: 0 0 calc(var(--w) * 0.02);
+  }
+  p { font-size: calc(var(--w) * 0.036); margin: 0; color: rgba(255, 255, 255, 0.82); }
+  .shot {
+    margin-top: calc(var(--h) * 0.04); width: 80%; border-radius: calc(var(--w) * 0.075);
+    border: calc(var(--w) * 0.012) solid #0e1c17; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  }
+</style>
+</head>
+<body>
+<div class="caption"><h1 id="title"></h1><p id="sub"></p></div>
+<img class="shot" id="shot" alt="">
+<script>
+  const q = new URLSearchParams(location.search);
+  document.body.style.setProperty("--w", q.get("w") + "px");
+  document.body.style.setProperty("--h", q.get("h") + "px");
+  document.getElementById("title").textContent = q.get("title");
+  document.getElementById("sub").textContent = q.get("sub") || "";
+  document.getElementById("shot").src = q.get("shot");
+</script>
+</body>
+</html>

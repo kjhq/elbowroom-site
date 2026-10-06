@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <!-- "The Doorway" (research/05 §5.4): a Paper arch with room inside, one Clay square = the photo you kept. -->
+  <rect width="1024" height="1024" fill="#1F5A46"/>
+  <path d="M272 812 V452 A240 240 0 0 1 752 452 V812 Z" fill="#F5F0E6"/>
+  <rect x="330" y="640" width="120" height="120" rx="18" fill="#A84B24"/>
+</svg>
